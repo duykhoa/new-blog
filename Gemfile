@@ -12,6 +12,7 @@ end
 
 gem 'figaro'
 gem 'pg'
+gem 'responders'
 
 group :development do
   gem 'spring'
