@@ -1,6 +1,9 @@
 # New blog
+[![Build Status](https://travis-ci.org/duykhoa/new-blog.svg?branch=master)](https://travis-ci.org/duykhoa/new-blog)
 
-# Functions
+Simple blog engine, use rails and polymer js
+
+# Features
   - List all posts
   - View a post
   - Post's tags
@@ -21,6 +24,7 @@
   - rails s
   **options** to deploy
   - need to support vulcanize, and run gulp to combine assets
+  - I use mina to deploy, for future, I will support docker, hope someone help me on it :)
 
 # Contributing
   - Fork
