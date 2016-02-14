@@ -1,5 +1,6 @@
 # New blog
 [![Build Status](https://travis-ci.org/duykhoa/new-blog.svg?branch=master)](https://travis-ci.org/duykhoa/new-blog)
+[![Code Climate](https://codeclimate.com/github/duykhoa/new-blog/badges/gpa.svg)](https://codeclimate.com/github/duykhoa/new-blog)
 
 Simple blog engine, use rails and polymer js
 
