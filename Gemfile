@@ -25,9 +25,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'travis'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'launchy'
+  gem 'codeclimate-test-reporter', require: false
 end
