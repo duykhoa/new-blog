@@ -1,0 +1,14 @@
+common: &common
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  pool:     5
+  username: kevin
+  password:
+
+development:
+  <<: *common
+  database: new-blog_development
+
+test:
+  database: new-blog_test
