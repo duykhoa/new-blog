@@ -1,5 +1,5 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe "hi do" do
-  it { expect(true).to eq true }
+RSpec.describe Post, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
