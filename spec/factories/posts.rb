@@ -1,7 +1,10 @@
 FactoryGirl.define do
   factory :post do
-    title { Faker::Lorem.sentence }
-    content { Faker::Lorem.paragraph(2) }
-    category { CATEGORY.sample }
+    sequence :title do |i|
+      "Title #{i}"
+    end
+
+    content "This is a content sample"
+    category "Category1"
   end
 end
