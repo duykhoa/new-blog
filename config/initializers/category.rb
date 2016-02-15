@@ -1,0 +1,5 @@
+CATEGORY = [
+  "Fantasy",
+  "Inspiration",
+  "Travel"
+]
