@@ -6,10 +6,6 @@ gem 'rails', '4.2.5.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
-group :development, :test do
-  gem 'byebug'
-end
-
 gem 'figaro'
 gem 'pg'
 gem 'responders'
@@ -21,12 +17,13 @@ group :development do
 end
 
 group :development, :test do
+  gem 'byebug'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
-  gem 'travis'
+  gem 'ruby-progressbar', require: false
 end
 
 group :test do
