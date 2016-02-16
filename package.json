@@ -1,0 +1,19 @@
+{
+  "name": "new-blog",
+  "version": "1.0.0",
+  "description": "Modern blog engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duykhoa/new-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duykhoa/new-blog/issues"
+  },
+  "homepage": "https://github.com/duykhoa/new-blog#readme"
+}
