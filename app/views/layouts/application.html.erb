@@ -3,10 +3,13 @@
 <head>
   <title>NewBlog</title>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "application" %>
   <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="elements/cara-nav.html">
   <link rel="import" href="elements/cara-home.html">
 </head>
 <body>
-<%= yield %>
+  <cara-nav></cara-nav>
+  <%= yield %>
 </body>
 </html>
