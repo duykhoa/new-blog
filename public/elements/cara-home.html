@@ -1,18 +1,37 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-
 <link rel="import" href="../elements/cara-post-data.html">
 
 
 <dom-module id="cara-home">
   <template>
     <cara-post-data
-      post-data="{{post}}"
+      post-data="{{postData}}"
     ></cara-post-data>
+
+      <template is ="dom-repeat" items="[[posts]]">
+        <div>[[item.title]]</div>
+        <div>[[item.content]]</div>
+        <div>[[item.category]]</div>
+        <hr>
+      </template>
   </template>
 
   <script>
     Polymer({
-      is: "cara-home"
+      is: "cara-home",
+      properties: {
+        posts: {
+          type: Object,
+          value: []
+        },
+        postData: {
+          type: Object,
+          observer: "_updatePosts"
+        }
+      },
+      _updatePosts: function() {
+        this.posts = this.posts.concat(this.postData);
+      }
     })
   </script>
 </dom-module>
