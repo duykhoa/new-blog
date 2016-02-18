@@ -3,16 +3,25 @@
 <link rel="import" href="../elements/cara-post.html">
 
 <dom-module id="cara-home">
+  <style>
+    :host {
+      display: block;
+      width: 1012px;
+      margin: 0 auto;
+      margin-top: 50px;
+  }
+  </style>
+
   <template>
     <cara-post-data
       post-data="{{postData}}"
     ></cara-post-data>
 
-      <template is ="dom-repeat" items="[[posts]]">
-        <cara-post
-          item="[[item]]"
-        ></cara-post>
-      </template>
+    <template is ="dom-repeat" items="[[posts]]">
+      <cara-post
+        item="[[item]]"
+      ></cara-post>
+    </template>
   </template>
 
   <script>

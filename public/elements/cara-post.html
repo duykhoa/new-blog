@@ -4,14 +4,11 @@
 <dom-module id="cara-post">
   <style>
     :host {
-      display: block;
-      width: 100%;
-      overflow: hidden;
     }
 
     iron-image {
       width: 100%;
-      min-height: 600px;
+      height: 600px;
     }
   </style>
   <template>
@@ -20,8 +17,7 @@
       preload
       fade
       placeholder="[[defaultImage]]"
-      sizing="contain"
-      position="left"
+      sizing="cover"
     ></iron-image>
 
     <div class="layout horizontal">
