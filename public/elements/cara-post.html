@@ -1,12 +1,55 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
 
 <dom-module id="cara-post">
+  <style>
+    :host {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    iron-image {
+      width: 100%;
+      min-height: 600px;
+    }
+  </style>
   <template>
+    <iron-image
+      src="[[post.headerImage]]"
+      preload
+      fade
+      placeholder="[[defaultImage]]"
+      sizing="contain"
+      position="left"
+    ></iron-image>
+
+    <div class="layout horizontal">
+      <div class="flex">
+        <div class="title">[[post.title]]</div>
+        <div>[[post.content]]</div>
+        <div class="readmore">READ MORE</div>
+      </div>
+      <div class="flex"></div>
+    </div>
   </template>
   <script>
     Polymer({
       is: "cara-post",
       properties: {
+        defaultImage: {
+          type: String,
+          value:"https://cloud.githubusercontent.com/assets/2004218/13149284/f314e0d6-d69b-11e5-8919-e0fcb0389733.png"
+        },
+        post: {
+          type: Object,
+          value: {
+            title: "Test",
+            content: "Test",
+            category: "Test",
+            headerImage: "https://images.unsplash.com/photo-1453857122308-5e78881d7acc"
+          }
+        }
       },
     })
   </script>

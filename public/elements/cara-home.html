@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../elements/cara-post-data.html">
-
+<link rel="import" href="../elements/cara-post.html">
 
 <dom-module id="cara-home">
   <template>
@@ -9,10 +9,9 @@
     ></cara-post-data>
 
       <template is ="dom-repeat" items="[[posts]]">
-        <div>[[item.title]]</div>
-        <div>[[item.content]]</div>
-        <div>[[item.category]]</div>
-        <hr>
+        <cara-post
+          item="[[item]]"
+        ></cara-post>
       </template>
   </template>
 
