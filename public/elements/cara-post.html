@@ -4,12 +4,60 @@
 <dom-module id="cara-post">
   <style>
     :host {
+      display: block;
     }
 
     iron-image {
       width: 100%;
       height: 600px;
     }
+
+    .title {
+      background: #000;
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 32px;
+      font-style: italic;
+      font-family: "Lora", serif;
+    }
+
+    .layout {
+      transform: translate(5%, -40px);
+    }
+
+    .summary {
+      font-size: 15px;
+      font-weight: 400;
+      margin-top: 10px;
+      color: #393939;
+      line-height: 24px;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .readmore {
+			color: #000;
+			font-size: 11px;
+			font-weight: 700;
+			display: table;
+			padding: 6px 8px;
+			text-decoration: none;
+			text-align: center;
+			border: 1px solid transparent;
+			border-bottom: 1px solid #000;
+			outline: 0;
+			background-color: transparent;
+			line-height: 1.5;
+			margin-top: 20px;
+			transition: .14s all linear;
+    }
+
+		.readmore:hover {
+			background-color: transparent;
+			color: #000;
+			border: 1px solid #000;
+		}
+
   </style>
   <template>
     <iron-image
@@ -23,7 +71,7 @@
     <div class="layout horizontal">
       <div class="flex">
         <div class="title">[[post.title]]</div>
-        <div>[[post.content]]</div>
+        <div class="summary">[[post.content]]</div>
         <div class="readmore">READ MORE</div>
       </div>
       <div class="flex"></div>
@@ -40,8 +88,8 @@
         post: {
           type: Object,
           value: {
-            title: "Test",
-            content: "Test",
+            title: "Welcome to Janice, an awesome Fashion and Lifestyle WordPress Blogging Theme",
+            content: "Welcome to Janice, an elegant, clean and modern WordPress theme built specifically for bloggers who love fashion, lifestyle and generally are cool people. It comes with an abundance of post and layout options that gives you all the features you will need to create your very own personal blogging site.",
             category: "Test",
             headerImage: "https://images.unsplash.com/photo-1453857122308-5e78881d7acc"
           }
