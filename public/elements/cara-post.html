@@ -36,27 +36,39 @@
     }
 
     .readmore {
-			color: #000;
-			font-size: 11px;
-			font-weight: 700;
-			display: table;
-			padding: 6px 8px;
-			text-decoration: none;
-			text-align: center;
-			border: 1px solid transparent;
-			border-bottom: 1px solid #000;
-			outline: 0;
-			background-color: transparent;
-			line-height: 1.5;
-			margin-top: 20px;
-			transition: .14s all linear;
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      display: table;
+      padding: 6px 8px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #000;
+      outline: 0;
+      background-color: transparent;
+      line-height: 1.5;
+      margin-top: 20px;
+      transition: .14s all linear;
     }
 
-		.readmore:hover {
-			background-color: transparent;
-			color: #000;
-			border: 1px solid #000;
-		}
+    .readmore:hover {
+      background-color: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+    }
+
+    a:hover, a:visited {
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+    }
 
   </style>
   <template>
@@ -70,9 +82,15 @@
 
     <div class="layout horizontal">
       <div class="flex">
-        <div class="title">[[post.title]]</div>
+        <div class="title">
+          <a href="#">[[post.title]]</a>
+        </div>
         <div class="summary">[[post.content]]</div>
-        <div class="readmore">READ MORE</div>
+        <div class="readmore">
+          <a href="#">
+            READ MORE
+          </a>
+        </div>
       </div>
       <div class="flex"></div>
     </div>
