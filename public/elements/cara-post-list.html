@@ -1,0 +1,45 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../elements/cara-post-data.html">
+<link rel="import" href="../elements/cara-post.html">
+
+<dom-module id="cara-post-list">
+  <style>
+    :host {
+      display: block;
+      width: 1012px;
+      margin: 0 auto;
+      margin-top: 50px;
+  }
+  </style>
+
+  <template>
+    <cara-post-data
+      post-data="{{postData}}"
+    ></cara-post-data>
+
+    <template is ="dom-repeat" items="[[posts]]">
+      <cara-post
+        item="[[item]]"
+      ></cara-post>
+    </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: "cara-post-list",
+      properties: {
+        posts: {
+          type: Object,
+          value: []
+        },
+        postData: {
+          type: Object,
+          observer: "_updatePosts"
+        }
+      },
+      _updatePosts: function() {
+        this.posts = this.posts.concat(this.postData);
+      }
+    })
+  </script>
+</dom-module>

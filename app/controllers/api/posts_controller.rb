@@ -3,7 +3,7 @@ class Api::PostsController < ApplicationApiController
   #
   # Returns a list of posts
   def index
-    respond_with Post.all
+    respond_with Post.first(10)
   end
 
   # GET /api/posts/:id

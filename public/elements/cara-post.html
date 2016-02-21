@@ -1,0 +1,118 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<dom-module id="cara-post">
+  <style>
+    :host {
+      display: block;
+    }
+
+    iron-image {
+      width: 100%;
+      height: 600px;
+    }
+
+    .title {
+      background: #000;
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 32px;
+      font-style: italic;
+      font-family: "Lora", serif;
+    }
+
+    .layout {
+      transform: translate(5%, -40px);
+    }
+
+    .summary {
+      font-size: 15px;
+      font-weight: 400;
+      margin-top: 10px;
+      color: #393939;
+      line-height: 24px;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .readmore {
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      display: table;
+      padding: 6px 8px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #000;
+      outline: 0;
+      background-color: transparent;
+      line-height: 1.5;
+      margin-top: 20px;
+      transition: .14s all linear;
+    }
+
+    .readmore:hover {
+      background-color: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+    }
+
+    a:hover, a:visited {
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+    }
+
+  </style>
+  <template>
+    <iron-image
+      src="[[post.headerImage]]"
+      preload
+      fade
+      placeholder="[[defaultImage]]"
+      sizing="cover"
+    ></iron-image>
+
+    <div class="layout horizontal">
+      <div class="flex">
+        <div class="title">
+          <a href="#">[[post.title]]</a>
+        </div>
+        <div class="summary">[[post.content]]</div>
+        <div class="readmore">
+          <a href="#">
+            READ MORE
+          </a>
+        </div>
+      </div>
+      <div class="flex"></div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: "cara-post",
+      properties: {
+        defaultImage: {
+          type: String,
+          value:"https://cloud.githubusercontent.com/assets/2004218/13149284/f314e0d6-d69b-11e5-8919-e0fcb0389733.png"
+        },
+        post: {
+          type: Object,
+          value: {
+            title: "Welcome to Janice, an awesome Fashion and Lifestyle WordPress Blogging Theme",
+            content: "Welcome to Janice, an elegant, clean and modern WordPress theme built specifically for bloggers who love fashion, lifestyle and generally are cool people. It comes with an abundance of post and layout options that gives you all the features you will need to create your very own personal blogging site.",
+            category: "Test",
+            headerImage: "https://images.unsplash.com/photo-1453857122308-5e78881d7acc"
+          }
+        }
+      },
+    })
+  </script>
+</dom-module>

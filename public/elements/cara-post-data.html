@@ -1,0 +1,30 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="cara-post-data">
+  <template>
+    <iron-ajax
+      url="[[postsIndexUrl]]"
+      last-response="{{postData}}"
+      handle-as="json"
+      auto
+    ></iron-ajax>
+  </template>
+
+  <script>
+    Polymer({
+      is: "cara-post-data",
+      properties: {
+        postData: {
+          type: Object,
+          notify: true
+        },
+        postsIndexUrl: {
+          type: String,
+          value: "/api/posts"
+        }
+      }
+    })
+  </script>
+</dom-module>
+

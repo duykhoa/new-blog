@@ -4,4 +4,6 @@ Rails.application.routes.draw do
     resources :related_posts, only: %i(show)
     resources :category_posts, only: %i(show)
   end
+
+  root to: 'homes#index'
 end
