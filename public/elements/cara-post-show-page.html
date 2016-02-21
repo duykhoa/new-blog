@@ -1,13 +1,28 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<link rel="import" href="../elements/cara-post-full.html">
 
 <dom-module id="cara-post-show-page">
+  <style>
+    :host {
+      display: block;
+      width: 1012px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  </style>
+
   <template>
-    test
+    <cara-post-full post-id="[[postId]]"></cara-post-full>
   </template>
 
   <script>
     Polymer({
-      is: "cara-post-show-page"
+      is: "cara-post-show-page",
+      properties: {
+        postId: String
+      }
     })
   </script>
 </dom-module>
