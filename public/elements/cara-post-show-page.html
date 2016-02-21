@@ -1,11 +1,12 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
 
+<link rel="import" href="../elements/cara-nav.html">
 <link rel="import" href="../elements/cara-post-full.html">
 
 <dom-module id="cara-post-show-page">
   <style>
-    :host {
+    .wrapper {
       display: block;
       width: 1012px;
       margin: 0 auto;
@@ -14,7 +15,10 @@
   </style>
 
   <template>
-    <cara-post-full post-id="[[postId]]"></cara-post-full>
+    <cara-nav></cara-nav>
+    <div class="wrapper">
+      <cara-post-full post-id="[[postId]]"></cara-post-full>
+    </div>
   </template>
 
   <script>
