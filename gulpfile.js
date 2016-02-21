@@ -7,6 +7,7 @@ var runSequence = require('run-sequence');
 gulp.task('vulcanize', function () {
   return gulp.src([
       'public/elements/cara-home-page.html',
+      'public/elements/cara-post-show-page.html',
     ])
     .pipe(vulcanize({
     }))
