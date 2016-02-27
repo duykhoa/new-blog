@@ -1,7 +1,8 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 
-<dom-module id="cara-post">
+<dom-module id="cara-post-full">
   <style>
     :host {
       display: block;
@@ -35,29 +36,6 @@
       margin-bottom: 20px;
     }
 
-    .readmore {
-      color: #000;
-      font-size: 11px;
-      font-weight: 700;
-      display: table;
-      padding: 6px 8px;
-      text-decoration: none;
-      text-align: center;
-      border: 1px solid transparent;
-      border-bottom: 1px solid #000;
-      outline: 0;
-      background-color: transparent;
-      line-height: 1.5;
-      margin-top: 20px;
-      transition: .14s all linear;
-    }
-
-    .readmore:hover {
-      background-color: transparent;
-      color: #000;
-      border: 1px solid #000;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
@@ -72,6 +50,13 @@
 
   </style>
   <template>
+    <iron-ajax
+      url="[[postShowUrl(postId)]]"
+      last-response="{{post}}"
+      handle-as="json"
+      auto
+    ></iron-ajax>
+
     <iron-image
       src="[[post.headerImage]]"
       preload
@@ -83,32 +68,26 @@
     <div class="layout horizontal">
       <div class="flex">
         <div class="title">
-          <a href="[[postUrl(post.id)]]">[[post.title]]</a>
+          <a href="#">[[post.title]]</a>
         </div>
         <div class="summary">[[post.content]]</div>
-        <div class="readmore">
-          <a href="[[postUrl(post.id)]]">
-            READ MORE
-          </a>
-        </div>
       </div>
       <div class="flex"></div>
     </div>
   </template>
   <script>
     Polymer({
-      is: "cara-post",
+      is: "cara-post-full",
       properties: {
+        postId: String,
         defaultImage: {
           type: String,
           value:"https://cloud.githubusercontent.com/assets/2004218/13149284/f314e0d6-d69b-11e5-8919-e0fcb0389733.png"
         },
-        post: {
-          type: Object
-        }
+        post: Object
       },
-      postUrl: function(id) {
-        return "posts/" + id;
+      postShowUrl: function(postId) {
+        return "/api/posts/" + postId + ".json";
       }
     })
   </script>
