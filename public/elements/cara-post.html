@@ -83,11 +83,11 @@
     <div class="layout horizontal">
       <div class="flex">
         <div class="title">
-          <a href="#">[[post.title]]</a>
+          <a href="[[postUrl(post.id)]]">[[post.title]]</a>
         </div>
         <div class="summary">[[post.content]]</div>
         <div class="readmore">
-          <a href="#">
+          <a href="[[postUrl(post.id)]]">
             READ MORE
           </a>
         </div>
@@ -104,15 +104,12 @@
           value:"https://cloud.githubusercontent.com/assets/2004218/13149284/f314e0d6-d69b-11e5-8919-e0fcb0389733.png"
         },
         post: {
-          type: Object,
-          value: {
-            title: "Welcome to Janice, an awesome Fashion and Lifestyle WordPress Blogging Theme",
-            content: "Welcome to Janice, an elegant, clean and modern WordPress theme built specifically for bloggers who love fashion, lifestyle and generally are cool people. It comes with an abundance of post and layout options that gives you all the features you will need to create your very own personal blogging site.",
-            category: "Test",
-            headerImage: "https://images.unsplash.com/photo-1453857122308-5e78881d7acc"
-          }
+          type: Object
         }
       },
+      postUrl: function(id) {
+        return "posts/" + id;
+      }
     })
   </script>
 </dom-module>
