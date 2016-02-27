@@ -11,7 +11,6 @@
     "iron-localstorage": "PolymerElements/iron-localstorage#^1.0.0",
     "iron-media-query": "PolymerElements/iron-media-query#^1.0.0",
     "iron-signals": "PolymerElements/iron-signals#^1.0.0",
-    "paper-spinner": "PolymerElements/paper-spinner#^1.0.0",
-    "facebook-comments": "~1.0.1"
+    "paper-spinner": "PolymerElements/paper-spinner#^1.0.0"
   }
 }
