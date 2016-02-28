@@ -1,11 +1,13 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/juicy-html/juicy-html.html">
 
 <dom-module id="cara-post-full">
   <style>
     :host {
       display: block;
+      font-family: "Lora", serif;
     }
 
     iron-image {
@@ -26,7 +28,31 @@
       transform: translate(5%, -40px);
     }
 
-    .summary {
+    .main-content ::content a {
+      color: #000;
+      border-bottom: 1px solid #000;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .main-content ::content a:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .main-content ::content ins { 
+      background: #fff9c0;
+      text-decoration: none;
+    }
+
+    .main-content ::content blockquote {
+      color: #626262;
+      font-style: italic;
+      margin: 30px 20px;
+      border-left: 3px solid #333;
+      padding: 0 20px;
+    }
+    .main-content {
       font-size: 15px;
       font-weight: 400;
       margin-top: 10px;
@@ -36,18 +62,17 @@
       margin-bottom: 20px;
     }
 
-    a {
+    .title a {
       color: inherit;
       text-decoration: none;
       outline: none;
     }
 
-    a:hover, a:visited {
+    .title a:hover, .title a:visited {
       color: inherit;
       text-decoration: none;
       outline: none;
     }
-
   </style>
   <template>
     <iron-ajax
@@ -70,7 +95,12 @@
         <div class="title">
           <a href="#">[[post.title]]</a>
         </div>
-        <div class="summary">[[post.content]]</div>
+        <div class="main-content">
+          <template
+            is="juicy-html"
+            content$="[[post.content]]"
+          ></template>
+        </div>
         <div class="comment">
           <div class="fb-comments" data-href="[[postShowUrl(post.id)]]" data-numposts="5"></div>
         </div>
