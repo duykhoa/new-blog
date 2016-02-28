@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resoures :posts
+    resources :posts
   end
 
   get '/posts/:id', to: 'posts#show'
