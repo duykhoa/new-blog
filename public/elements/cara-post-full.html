@@ -22,10 +22,12 @@
       font-size: 32px;
       font-style: italic;
       font-family: "Lora", serif;
+      width: 50%;
     }
 
-    .layout {
+    .wrapper {
       transform: translate(5%, -40px);
+      width: 95%;
     }
 
     .main-content ::content a {
@@ -52,6 +54,11 @@
       border-left: 3px solid #333;
       padding: 0 20px;
     }
+
+    .main-content ::content img {
+      max-width: 100%;
+    }
+
     .main-content {
       font-size: 15px;
       font-weight: 400;
@@ -90,22 +97,19 @@
       sizing="cover"
     ></iron-image>
 
-    <div class="layout horizontal">
-      <div class="flex">
-        <div class="title">
-          <a href="#">[[post.title]]</a>
-        </div>
-        <div class="main-content">
-          <template
-            is="juicy-html"
-            content$="[[post.content]]"
-          ></template>
-        </div>
-        <div class="comment">
-          <div class="fb-comments" data-href="[[postShowUrl(post.id)]]" data-numposts="5"></div>
-        </div>
+    <div class="wrapper">
+      <div class="title">
+        <a href="#">[[post.title]]</a>
       </div>
-      <div class="flex"></div>
+      <div class="main-content">
+        <template
+          is="juicy-html"
+          content$="[[post.content]]"
+        ></template>
+      </div>
+      <div class="comment">
+        <div class="fb-comments" data-href="[[postShowUrl(post.id)]]" data-numposts="5"></div>
+      </div>
     </div>
 
     <div id="fb-root"></div>
