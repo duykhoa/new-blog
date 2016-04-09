@@ -9,6 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'figaro'
 gem 'pg'
 gem 'responders'
+gem 'upload_image'
 
 group :development do
   gem 'spring'

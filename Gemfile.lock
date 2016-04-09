@@ -46,6 +46,8 @@ GEM
     database_cleaner (1.5.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    domain_name (0.5.20160310)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -59,6 +61,8 @@ GEM
       thor (~> 0.14)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     interception (0.5)
     json (1.8.3)
@@ -70,6 +74,7 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
@@ -114,6 +119,10 @@ GEM
     rake (10.5.0)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec-core (3.4.2)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -163,6 +172,11 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
+    upload_image (0.1.2)
+      rest-client (~> 1.8)
 
 PLATFORMS
   ruby
@@ -186,6 +200,7 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   uglifier (>= 1.3.0)
+  upload_image
 
 BUNDLED WITH
    1.11.2
