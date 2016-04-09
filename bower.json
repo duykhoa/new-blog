@@ -12,6 +12,7 @@
     "iron-media-query": "PolymerElements/iron-media-query#^1.0.0",
     "iron-signals": "PolymerElements/iron-signals#^1.0.0",
     "paper-spinner": "PolymerElements/paper-spinner#^1.0.0",
-    "juicy-html": "x-html#~1.0.2"
+    "new-blog_admin": "duykhoa/new-blog_admin",
+    "juicy-html": "Juicy/juicy-html#^1.1.0"
   }
 }

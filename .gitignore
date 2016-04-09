@@ -66,3 +66,6 @@ public/bower_components/
 
 # dist
 public/dist/**
+
+# byebug
+.byebug*
