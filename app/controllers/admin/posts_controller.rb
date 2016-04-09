@@ -3,6 +3,10 @@ class Admin::PostsController < ApplicationAdminController
     @posts = to_json(Post.all)
   end
 
+  def new
+    @category = CATEGORY
+  end
+
   private
 
   def to_json(posts)
