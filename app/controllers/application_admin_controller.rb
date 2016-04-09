@@ -3,6 +3,7 @@ require "application_responder"
 class ApplicationAdminController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
+  layout "application"
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
