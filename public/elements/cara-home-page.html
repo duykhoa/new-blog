@@ -5,14 +5,17 @@
 
 <dom-module id="cara-home-page">
   <template>
-    <cara-nav></cara-nav>
+    <cara-nav categories="[[categoryList]]"></cara-nav>
     <cara-header-pane></cara-header-pane>
     <cara-post-list></cara-post-list>
   </template>
 
   <script>
     Polymer({
-      is: "cara-home-page"
+      is: "cara-home-page",
+      properties: {
+        categoryList: Object
+      }
     })
   </script>
 </dom-module>

@@ -38,6 +38,7 @@
 
       a {
         color: white;
+        text-transform: uppercase;
       }
     </style>
 
@@ -49,10 +50,9 @@
       </div>
       <div class="flex-10 superior-menu ">
         <div class="layout horizontal center-justified">
-          <a href="#">CATEGORIES</a>
-          <a href="#">CATEGORIES</a>
-          <a href="#">CATEGORIES</a>
-          <a href="#">CATEGORIES</a>
+          <template is="dom-repeat" items="[[categories]]">
+            <a href="#">[[item]]</a>
+          </template>
         </div>
       </div>
       <div class="flex">
@@ -66,7 +66,13 @@
 
   <script>
     Polymer({
-      is: "cara-nav"
+      is: "cara-nav",
+      properties: {
+        categories: {
+          type: Object,
+          value: []
+        }
+      }
     })
   </script>
 </dom-module>
