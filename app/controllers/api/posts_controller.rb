@@ -12,4 +12,15 @@ class Api::PostsController < ApplicationApiController
   def show
     respond_with Post.find_by_id(params[:id])
   end
+
+  def create
+    @post = Post.new(post_params).save
+    render json: { success: true }
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :short_content, :image, :category)
+  end
 end

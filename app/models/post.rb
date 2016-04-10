@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   RELATED_POST_MAX = 5
+  default_scope { order(created_at: :desc) }
 
   # Public: Get related post with post id
   #
