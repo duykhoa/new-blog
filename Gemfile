@@ -10,6 +10,7 @@ gem 'figaro'
 gem 'pg'
 gem 'responders'
 gem 'upload_image'
+gem 'bcrypt'
 
 group :development do
   gem 'spring'
