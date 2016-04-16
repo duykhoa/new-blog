@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :images
     resources :related_posts, only: %i(show)
     resources :category_posts, only: %i(show)
+    resources :sessions
   end
 
   namespace :admin do
