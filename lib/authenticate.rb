@@ -1,7 +1,7 @@
 module Authenticate
   require 'digest/sha1'
 
-  def authenticate
+  def authenticate!
     Digest::SHA1.hexdigest(key) == ENV['salt']
   end
 

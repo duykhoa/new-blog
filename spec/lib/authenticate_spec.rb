@@ -16,7 +16,7 @@ describe Authenticate do
     end
 
     before { Object.const_set("X", x) }
-    subject { X.new('user', 'password').authenticate }
+    subject { X.new('user', 'password').authenticate! }
     it { is_expected.to be true }
   end
 end
