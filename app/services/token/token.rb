@@ -12,4 +12,8 @@ class Token
       timestamp: timestamp
     }
   end
+
+  def ==(a_token)
+    token == a_token.token
+  end
 end

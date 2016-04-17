@@ -9,6 +9,6 @@ class TokenVerifier
   end
 
   def verify!
-    TokenGenerator.new(timestamp).generate == token
+    TokenGenerator.new(timestamp: timestamp).generate == token
   end
 end
