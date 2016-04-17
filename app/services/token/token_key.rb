@@ -1,5 +1,5 @@
-module Authenticate
-  class TokenKey
+class TokenKey
+  class << self
     def of(timestamp)
       [ encode_password, timestamp, salt ].join("-")
     end
