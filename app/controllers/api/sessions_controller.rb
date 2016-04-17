@@ -1,10 +1,11 @@
-class SessionsController < ApplicationApiController
+class Api::SessionsController < ApplicationApiController
   def create
+    debugger
     user = User.new(user_name: user_params)
     if user.authenticate!
-      return json: { status: :successs }
+      return :json, { status: :successs }
     else
-      return json: { status: :failure }
+      return :json, { status: :failure }
     end
   end
 

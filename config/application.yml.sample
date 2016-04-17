@@ -1,0 +1,7 @@
+# user is user, password is password
+development:
+  salt: 37e65a15119745600af12a3625726b78
+  encode_password: 691ca1151748ae7b52b1c82eaaacc60f8d41db82
+test:
+  salt: 37e65a15119745600af12a3625726b78
+  encode_password: 691ca1151748ae7b52b1c82eaaacc60f8d41db82
