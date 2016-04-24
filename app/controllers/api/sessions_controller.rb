@@ -1,15 +1,17 @@
 class Api::SessionsController < ApplicationApiController
   def create
-    debugger
-    user = User.new(user_name: user_params)
-    if user.authenticate!
-      return :json, { status: :successs }
+    token = BlogAuthenticate.new(user_params).authenticate
+
+    if token
+      render json: token.to_h
     else
-      return :json, { status: :failure }
+      render json: { status: 401, msg: "Not authorized"}
     end
   end
 
+  private
+
   def user_params
-    params.slice(:user_name, :password)
+    params.permit(:user, :password)
   end
 end
