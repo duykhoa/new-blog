@@ -1,4 +1,5 @@
 class Api::PostsController < ApplicationApiController
+  before_action :verify_token, only: [:create ]
   # GET /api/posts
   #
   # Returns a list of posts

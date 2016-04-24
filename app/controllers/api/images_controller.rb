@@ -1,4 +1,6 @@
 class Api::ImagesController < ApplicationApiController
+  before_action :verify_token, only: [ :create ]
+
   def create
     render json: to_json(image_upload)
   end
