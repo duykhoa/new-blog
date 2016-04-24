@@ -3,8 +3,8 @@ require 'digest/sha1'
 class TokenVerifier
   attr_reader :token, :timestamp
 
-  def initialize(opts = {})
-    @token = opts[:token]
+  def initialize(token:)
+    @token = token
     @timestamp = token.timestamp
   end
 
