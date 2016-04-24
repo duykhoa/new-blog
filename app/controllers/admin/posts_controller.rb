@@ -1,4 +1,6 @@
 class Admin::PostsController < ApplicationAdminController
+  before_action :verify_token, except: %i( index )
+
   def index
     @posts = to_json(Post.all)
   end
