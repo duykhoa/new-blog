@@ -9,6 +9,13 @@ class Admin::PostsController < ApplicationAdminController
     @category = CATEGORY
   end
 
+  def destroy
+    post = Post.find params[:post_id]
+    post.destroy
+
+    redirect_to admin_root_path
+  end
+
   private
 
   def to_json(posts)

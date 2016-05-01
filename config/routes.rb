@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :posts
+    root to: 'posts#index'
+
+    resources :posts do
+      get 'delete', to: 'posts#destroy'
+    end
   end
 
   get '/posts/:id', to: 'posts#show'
