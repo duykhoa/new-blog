@@ -20,9 +20,9 @@ class Admin::PostsController < ApplicationAdminController
       title: post.title,
       short_content: post.short_content,
       category: post.category,
-      editUrl: '/',
-      deleteUrl: '/',
-      viewUrl: '/'
+      editUrl: '/admin/posts/' + post.id.to_s + '/edit',
+      deleteUrl: '/admin/posts/' + post.id.to_s + '/delete',
+      viewUrl: '/posts/' + post.id.to_s
     }
   end
 end
