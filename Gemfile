@@ -11,6 +11,8 @@ gem 'pg'
 gem 'responders'
 gem 'upload_image'
 
+gem 'devise'
+
 group :development do
   gem 'spring'
   gem 'quiet_assets'
