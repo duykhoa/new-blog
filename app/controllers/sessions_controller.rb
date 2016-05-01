@@ -6,7 +6,7 @@ class SessionsController < ApplicationApiController
     token = BlogAuthenticate.new(user_params).authenticate
 
     if token
-      session[:token] = token.token
+      session[:token] = token
       render json: token.to_h
     else
       render json: { status: 401, msg: "Not authorized"}
