@@ -11,8 +11,6 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :sessions
-
   get '/posts/:id', to: 'posts#show'
   root to: 'homes#index'
 end

@@ -1,5 +1,4 @@
 class Admin::PostsController < ApplicationAdminController
-  before_action :verify_token, except: %i( index )
   before_action :authenticate_user!
 
   def index
