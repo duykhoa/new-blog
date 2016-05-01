@@ -9,11 +9,9 @@ class Admin::PostsController < ApplicationAdminController
     @category = CATEGORY
   end
 
-  def destroy
-    post = Post.find params[:post_id]
-    post.destroy
-
-    redirect_to admin_root_path
+  def edit
+    @category = CATEGORY
+    @post = Post.find params[:id]
   end
 
   private
@@ -28,7 +26,7 @@ class Admin::PostsController < ApplicationAdminController
       short_content: post.short_content,
       category: post.category,
       editUrl: '/admin/posts/' + post.id.to_s + '/edit',
-      deleteUrl: '/admin/posts/' + post.id.to_s + '/delete',
+      deleteUrl: '/api/posts/' + post.id.to_s + '/delete',
       viewUrl: '/posts/' + post.id.to_s
     }
   end

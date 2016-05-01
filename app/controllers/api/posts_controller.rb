@@ -19,6 +19,20 @@ class Api::PostsController < ApplicationApiController
     render json: { success: true }
   end
 
+  def update
+    post = Post.find params[:post_id]
+    post.update(post_params)
+
+    render json: { success: true }
+  end
+
+  def destroy
+    post = Post.find params[:post_id]
+    post.destroy
+
+    redirect_to admin_root_path
+  end
+
   private
 
   def post_params

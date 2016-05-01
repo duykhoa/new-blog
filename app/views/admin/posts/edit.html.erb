@@ -1,0 +1,12 @@
+<link rel="import" href="/bower_components/new-blog_admin/dist/k-new-post.html">
+
+<k-new-post
+  post-url= <%="/api/posts/" + @post.id.to_s + "/update"%>
+  title-value='<%= @post.title %>'
+  short-content-value='<%= @post.short_content%>'
+  image-value='<%= @post.image%>'
+  category-list='<%= @category %>'
+  header-upload-url="/api/images"
+  category-value='<%= @post.category%>'
+  content-value='<%= @post.content%>'
+></k-new-post>
