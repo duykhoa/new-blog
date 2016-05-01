@@ -10,7 +10,7 @@ class ApplicationAdminController < ActionController::Base
   protect_from_forgery with: :exception
 
   def verify_token
-    token = Token.new(params)
+    token = Token.new(session[:token])
 
     unless TokenVerifier.new(token: token).verify!
       render json: { status: 401, msg: "Not authorized" }

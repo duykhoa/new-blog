@@ -2,8 +2,8 @@ class Token
   attr_accessor :token, :timestamp
 
   def initialize(opts = {})
-    @token = opts[:token]
-    @timestamp = opts[:timestamp]
+    @token = opts[:token] || opts["token"]
+    @timestamp = opts[:timestamp] || opts["timestamp"]
   end
 
   def to_h

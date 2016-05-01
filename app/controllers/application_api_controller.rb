@@ -5,6 +5,7 @@ class ApplicationApiController < ActionController::Base
   respond_to :json
 
   def verify_token
+
     token = Token.new(params)
 
     unless TokenVerifier.new(token: token).verify!
