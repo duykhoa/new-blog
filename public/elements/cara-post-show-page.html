@@ -15,7 +15,7 @@
   </style>
 
   <template>
-    <cara-nav></cara-nav>
+    <cara-nav categories="[[categoryList]]"></cara-nav>
     <div class="wrapper">
       <cara-post-full post-id="[[postId]]"></cara-post-full>
     </div>
@@ -25,7 +25,8 @@
     Polymer({
       is: "cara-post-show-page",
       properties: {
-        postId: String
+        postId: String,
+        categoryList: Object
       }
     })
   </script>
