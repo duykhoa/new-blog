@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationApiController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   # GET /api/posts
   #
   # Returns a list of posts
